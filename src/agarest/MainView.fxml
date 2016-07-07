@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="630.0" minWidth="1120.0" prefHeight="630.0" prefWidth="1120.0" vgap="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agarest.MainController">
+	<columnConstraints>
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="430.0" minWidth="430.0" prefWidth="430.0" />
+		<ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" valignment="TOP" vgrow="NEVER" />
+		<RowConstraints maxHeight="1.7976931348623157E308" minHeight="-Infinity" vgrow="SOMETIMES" />
+	</rowConstraints>
+	<children>
+		<MenuBar maxHeight="25.0" minHeight="25.0" prefHeight="25.0" GridPane.columnSpan="2147483647" GridPane.valignment="TOP" GridPane.vgrow="NEVER">
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem fx:id="menuAddChar" mnemonicParsing="false" onAction="#handleAddCharacterMenuItem" text="Add Character" />
+						<MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#handleCloseMenuItem" text="Close" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<ListView fx:id="listViewChar" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" GridPane.rowIndex="1" GridPane.rowSpan="2147483647" />
+		<StackPane fx:id="mainStackPane" maxWidth="430.0" minWidth="430.0" prefWidth="430.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+			<children>
+			<GridPane fx:id="paneStatus" hgap="5.0" maxWidth="430.0" minWidth="430.0" prefWidth="430.0" vgap="5.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+				<columnConstraints>
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" prefWidth="20.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="10.0" minWidth="10.0" prefWidth="10.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" prefWidth="30.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+					<ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+				</columnConstraints>
+				<rowConstraints>
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+				</rowConstraints>
+				<children>
+					<Label fx:id="labelCharName" alignment="CENTER" contentDisplay="CENTER" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" prefWidth="505.0" text="Character Name" textAlignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+						<font>
+							<Font name="Times New Roman Bold" size="31.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="Status" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER_RIGHT" contentDisplay="CENTER" prefHeight="16.0" prefWidth="61.0" text="Level : " textAlignment="RIGHT" GridPane.rowIndex="2" GridPane.rowSpan="2">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="currentLevel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.rowSpan="2">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="STR : " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					
+					<Label text="VIT : " GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="AGI : " GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="INT : " GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="WIS : " GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="LUK : " GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="currentSTR" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="currentVIT" text="0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="currentAGI" text="0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="currentINT" text="0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="currentWIS" text="0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="currentLUK" text="0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Separator orientation="VERTICAL" prefHeight="50.0" prefWidth="73.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="9" />
+					<Label text="Level Up" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="Next Level : " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label fx:id="nextLevel" text="0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="STR : " GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="VIT : " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="AGI : " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="INT : " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="WIS : " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="LUK : " GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="Points" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="Points" textAlignment="CENTER" GridPane.columnIndex="7" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="Cost" textAlignment="CENTER" GridPane.columnIndex="8" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label alignment="CENTER" contentDisplay="CENTER" text="Cost" textAlignment="CENTER" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<ComboBox fx:id="nextSTR" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+					<ComboBox fx:id="nextVIT" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+					<ComboBox fx:id="nextAGI" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="6" />
+					<ComboBox fx:id="nextINT" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="7" />
+					<ComboBox fx:id="nextWIS" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="8" />
+					<ComboBox fx:id="nextLUK" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="9" />
+					<TextField fx:id="costSTR" text="0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+					<TextField fx:id="costVIT" text="0" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+					<TextField fx:id="costAGI" text="0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+					<TextField fx:id="costINT" text="0" GridPane.columnIndex="6" GridPane.rowIndex="7" />
+					<TextField fx:id="costWIS" text="0" GridPane.columnIndex="6" GridPane.rowIndex="8" />
+					<TextField fx:id="costLUK" text="0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+					<ComboBox fx:id="additionalSTR" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+					<ComboBox fx:id="additionalVIT" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="5" />
+					<ComboBox fx:id="additionalAGI" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="6" />
+					<ComboBox fx:id="additionalINT" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="7" />
+					<ComboBox fx:id="additionalWIS" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="8" />
+					<ComboBox fx:id="additionalLUK" prefWidth="150.0" GridPane.columnIndex="7" GridPane.rowIndex="9" />
+					<TextField fx:id="costAddSTR" text="0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+					<TextField fx:id="costAddVIT" text="0" GridPane.columnIndex="8" GridPane.rowIndex="5" />
+					<TextField fx:id="costAddAGI" text="0" GridPane.columnIndex="8" GridPane.rowIndex="6" />
+					<TextField fx:id="costAddINT" text="0" GridPane.columnIndex="8" GridPane.rowIndex="7" />
+					<TextField fx:id="costAddWIS" text="0" GridPane.columnIndex="8" GridPane.rowIndex="8" />
+					<TextField fx:id="costAddLUK" text="0" GridPane.columnIndex="8" GridPane.rowIndex="9" />
+					<Button fx:id="buttonLevelUp" mnemonicParsing="false" onAction="#handleLevelUpButton" prefHeight="25.0" prefWidth="123.0" text="Level Up" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+					<Label prefHeight="17.0" prefWidth="56.0" text="Notes :" GridPane.rowIndex="11">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<TextArea fx:id="textAreaNotes" GridPane.columnSpan="2147483647" GridPane.rowIndex="12" />		
+					<Button fx:id="buttonSaveNotes" mnemonicParsing="false" onAction="#handleSaveNotesButton" prefHeight="25.0" prefWidth="122.0" text="Save Notes" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+				</children>
+			</GridPane>
+			<GridPane fx:id="paneNewChar">
+				<columnConstraints>
+					<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+					<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				</columnConstraints>
+				<rowConstraints>
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+					<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				</rowConstraints>
+				<children>
+					<Label text="STR : " GridPane.rowIndex="2">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label> 
+					<Label text="VIT : " GridPane.rowIndex="3">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="AGI : " GridPane.rowIndex="4">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="INT : " GridPane.rowIndex="5">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="WIS : " GridPane.rowIndex="6">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Label text="LUK : " GridPane.rowIndex="7">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<Button fx:id="btnAdd" mnemonicParsing="false" onAction="#handleAddCharacterButton" text="Add Character" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+					<Label text="Character Name :">
+						<font>
+							<Font name="Times New Roman" size="14.0" />
+						</font>
+					</Label>
+					<TextField fx:id="txtNewName" GridPane.columnIndex="1" />
+					<TextField fx:id="txtNewSTR" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+					<TextField fx:id="txtNewVIT" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+					<TextField fx:id="txtNewAGI" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+					<TextField fx:id="txtNewINT" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+					<TextField fx:id="txtNewWIS" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+					<TextField fx:id="txtNewLUK" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="Level :" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtNewLevel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				</children>
+			</GridPane>
+			</children>
+		</StackPane>
+		<TableView fx:id="historyTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="530.0" GridPane.columnIndex="2" GridPane.rowIndex="1" GridPane.rowSpan="2147483647">
+			<columns>
+				<TableColumn prefWidth="75.0" text="Level" />
+				<TableColumn prefWidth="75.0" text="STR" />
+				<TableColumn prefWidth="75.0" text="Cost" />
+				<TableColumn prefWidth="75.0" text="VIT" />
+				<TableColumn prefWidth="75.0" text="Cost" />
+				<TableColumn prefWidth="75.0" text="AGI" />
+				<TableColumn prefWidth="75.0" text="Cost" />
+				<TableColumn prefWidth="75.0" text="INT" />
+				<TableColumn prefWidth="75.0" text="Cost" />
+				<TableColumn prefWidth="75.0" text="WIS" />
+				<TableColumn prefWidth="75.0" text="Cost" />
+				<TableColumn prefWidth="75.0" text="LUK" />
+				<TableColumn prefWidth="75.0" text="Cost" />
+			</columns>
+		</TableView>
+	</children>
+</GridPane>
